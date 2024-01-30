@@ -1,1 +1,680 @@
-<!doctype html><html lang=en><head><meta charset=UTF-8 /><meta name=viewport content="width=device-width,initial-scale=1"/><link rel=icon href=/assets/NK-5768e983.png><script src=https://kit.fontawesome.com/c3b56a7551.js crossorigin=anonymous></script><link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel=stylesheet><title>Welcome to Naomi's portfolio</title><script type=module crossorigin src=/assets/index-f4be9e5f.js></script><link rel=stylesheet href=/assets/index-9e0cdd5c.css></head><body><div id=root></div><script src=https://cdn.rawgit.com/progers/pathseg/master/pathseg.js></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Naomi Yumi Kawai's Portfolio" />
+    
+    <!-- favicon -->
+    <link rel="icon" href="./images/NK-5768e983.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/NK-5768e983.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-I/tt7L/9ske4dG8hmZ3pxMOxFsZiSR1O6a2LMI5JH5Mli/XaLfM3QwGyz9LJ2itq" crossorigin="anonymous" />
+
+    <title>Naomi Yumi Kawai's Portfolio</title>
+
+    <!-- Email.JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('FKYCa8uRnA7SHD2oB');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                // this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('service_6mi7l79', 'template_zutz0ms', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+  </head>
+  
+  <body>
+    <!-- Header -->
+    <header>
+      <a href="/" class="logo">Naomi Kawai</a>
+      <a class="menu" onclick="toggleMenu();" href="#"
+        ><ion-icon class="open" name="menu-outline"></ion-icon
+        ><ion-icon class="close" name="close-outline"></ion-icon>
+      </a>
+      <ul class="nav">
+        <li>
+          <a class="nav-btn active" href="/" onclick="resetHeader();"
+            ><ion-icon name="home-outline"></ion-icon
+          ></a>
+        </li>
+        <li>
+          <a class="nav-btn" href="#" data-target="about">about</a>
+        </li>
+        <li>
+          <a class="nav-btn" href="#" data-target="services">skills</a>
+        </li>
+        <li>
+          <a class="nav-btn" href="#" data-target="portfolio">projects</a>
+        </li>
+        <li>
+          <a class="nav-btn" href="#" data-target="contact">contact</a>
+        </li>
+        <!-- <li>
+          <a class="nav-btn" href="https://www.linkedin.com/in/naomi-kawai-8228a077/" onclick="resetHeader();">
+             
+             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32m-273.3 373.43h-64.18V205.88h64.18ZM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43c0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43m264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44c-17.74 0-28.24 12-32.91 23.69c-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44c42.13 0 74 27.77 74 87.64Z"/></svg>
+          </a>
+       </li> -->
+      </ul>
+      <div class="search">
+        <input type="text" placeholder="Search" />
+        <ion-icon name="search-outline"></ion-icon>
+      </div>
+    </header>
+    <!-- Mobile Navigation -->
+    <ul class="nav-mobile">
+      <li>
+        <a class="nav-btn active" href="/" onclick="resetHeader();"
+          ><ion-icon name="home-outline"></ion-icon
+        ></a>
+      </li>
+      <li>
+        <a class="nav-btn" href="#" data-target="about">about</a>
+      </li>
+      <li>
+        <a class="nav-btn" href="#" data-target="services">skills</a>
+      </li>
+      <li>
+        <a class="nav-btn" href="#" data-target="portfolio">projects</a>
+      </li>
+      <li>
+        <a class="nav-btn" href="#" data-target="contact">contact</a>
+      </li>
+    </ul>
+    <!-- Banner -->
+    <div class="banner container-fluid">
+      <div class="bg-slide slide-1 active">
+        <div class="content">
+          <h1 class="animate__animated animate__fadeInUp">Front End</h1>
+          <p class="animate__animated animate__fadeInUp animate__delay-1s">
+            Experienced in building dynamic and responsive user interfaces using modern frontend technologies. 
+          </p>
+        </div>
+        <div class="circle bg">
+          <img src="./images/frontend2.jpg" alt="" />
+          <div class="circle large">
+            <img src="./images/frontend2.jpg" alt="" />
+            <div class="circle small">
+              <img src="./images/frontend2.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-slide slide-2">
+        <div class="content">
+          <h1>Back End</h1>
+          <p>
+            Versatile backend developer with a strong command of server-side languages, including Node.js and Express, and Python. Skilled in designing and implementing RESTful APIs and integrating with various database systems.
+          </p>
+        </div>
+        <div class="circle bg">
+          <img src="./images/backend.jpg" alt="" />
+          <div class="circle large">
+            <img src="./images/backend.jpg" alt="" />
+            <div class="circle small">
+              <img src="./images/backend.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-slide slide-3">
+        <div class="content">
+          <h1 style="font-size: 8em;">AI & Database</h1>
+          <p>
+            Familiar with machine learning concepts and frameworks, contributing to the development of intelligent applications.
+          </p>
+        </div>
+        <div class="circle bg">
+          <img src="./images/ai.jpg" alt="" />
+          <div class="circle large">
+            <img src="./images/ai.jpg" alt="" />
+            <div class="circle small">
+              <img src="./images/ai.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="slide-loader animate__animated animate__fadeInUp">
+        <li>
+          <a class="slide-btn active" data-target="slide-1">1</a>
+        </li>
+        <li>
+          <a class="slide-btn" data-target="slide-2">2</a>
+        </li>
+        <li>
+          <a class="slide-btn" data-target="slide-3">3</a>
+        </li>
+      </ul>
+      <!-- <div class="share animate__animated animate__fadeInLeft">
+        <p>share</p>
+        <a href="#"><ion-icon name="share-social-outline"></ion-icon></a>
+      </div> -->
+
+      <div class="lead animate__animated animate__fadeInUp">
+        <svg viewBox="0 0 100 100" width="100" height="100">
+          <defs>
+            <path
+              id="circle"
+              d="
+          M 50, 50
+          m -37, 0
+          a 37,37 0 1,1 74,0
+          a 37,37 0 1,1 -74,0"
+            />
+          </defs>
+          <text font-size="17">
+            <textPath xlink:href="#circle">
+              Welcome! Thank you for visiting my portfolio...
+            </textPath>
+          </text>
+        </svg>
+        <a class="move-down" onclick="initNavigation()" href="#"
+          ><ion-icon name="chevron-down-outline"></ion-icon
+        ></a>
+      </div>
+    </div>
+    <!-- Main Start -->
+    <main>
+      <!-- About Section -->
+      <section id="about" class="about">
+        <div class="container">
+          <div class="row">
+            <h1>About Me</h1>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="img-box">
+                <img class="img-fluid" src="./images/about1.jpg" alt="" />
+                <img class="corner-img" src="./images/laptop-75877d40.png" alt="" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <img class="section-bg-img" src="./images/background.png" alt="" />
+              <h4>Who am I?</h4>
+              <p>
+                <!-- lorem x 50 -->
+                Curiosity Drives Me To Move Forward.
+                I am Passionate About Learning Computer Languages Every Single Day To Deliver The Most Effective Solutions.
+                I believe that technology is one of our biggest hopes to overcome challenges around us.
+              </p>
+              <p>
+                <!-- lorem x 50 -->
+                Graduated from Nova Scotia Community College (NSCC) in Full Stack Application Development (2023) and IT Programming for AI (2024).
+              </p>
+              <p>A nature lover, hiker, knitter</p>
+              <!-- <a class="section-btn" href="#">Discover more</a> -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Skills Section -->
+      <section id="services" class="services">
+        <div class="container">
+          <div class="row">
+            <h1>My skills</h1>
+          </div>
+          <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-lg-4 d-flex justify-content-center">
+              <div class="card">
+                <div class="img-box">
+                  <img src="./images/frontend2.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <h4>Front End</h4>
+                  <p>
+                    Familiar with the latest frontend tools and libraries, including Next.js for server-side rendering.
+                  </p>
+                  <p>
+                    React / 
+                    React Native / 
+                    Vue / 
+                    JavaScript / 
+                    HTML / 
+                    CSS / 
+                    Tailwind CSS / 
+                    Material UI / 
+                    WordPress
+                  </p>
+                  <!-- <a class="section-btn" href="#">Discover more</a> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 d-flex justify-content-center">
+              <div class="card">
+                <div class="img-box">
+                  <img src="./images/backend.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <h4>Back End</h4>
+                  <p>
+                    Proficient in database management with PostgreSQL, MySQL, SQLite, and MongoDB with JavaScript, Python, and PHP
+                  </p>
+                  <p>
+                    Express / 
+                    Node.js / 
+                    Python / 
+                    PHP / 
+                    AWS (EC2)
+                  </p>
+                  <!-- <a class="section-btn" href="#">Discover more</a> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 d-flex justify-content-center">
+              <div class="card">
+                <div class="img-box">
+                  <img src="./images/ai.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <h4>AI & Database</h4>
+                  <p>
+                    Adept in the realm of artificial intelligence and database technologies, utilizing libraries such as Pandas and NumPy for data analysis.
+                  </p>
+                  <p>
+                    Python / 
+                    Google Colab / 
+                    PostgreSQL / 
+                    MySQL / 
+                    SQLite / 
+                    MongoDB / 
+                    csv
+                  </p>
+                  <!-- <a class="section-btn" href="#">Discover more</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Projects Section -->
+      <section id="portfolio" class="portfolio">
+        <div class="container">
+          <div class="row">
+            <h1>My projects</h1>
+          </div>
+          <ul id="portfolio-filters" class="d-flex justify-content-center">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-front">Front End</li>
+            <li data-filter=".filter-back">Back End</li>
+            <li data-filter=".filter-ai">AI & Database</li>
+          </ul>
+
+          <div class="row portfolio-container">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-front">
+              <div class="portfolio-img">
+                <img
+                  src="./images/portfolio/ghibli-f7a9fe0f.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="portfolio-info">
+                <h4>Ghibli Memory Game</h4>
+                <p>A memory game of Popular Ghibli Animations</p>
+                <a
+                  href="./images/portfolio/ghibli-f7a9fe0f.png"
+                  data-gallery="portfolioGallery"
+                  class="portfolio-lightbox preview-link"
+                  title="Ghibli Memory Game"
+                  ><ion-icon name="add-outline"></ion-icon
+                ></a>
+                <a href="https://github.com/yumikawai-sys/memoryCard" class="details-link" title="More Details"
+                  ><ion-icon name="link-outline"></ion-icon
+                ></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-front">
+              <div class="portfolio-img">
+                <img
+                  src="./images/portfolio/RealtimeBus-a3acada4.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="portfolio-info">
+                <h4>Real-time Bus Tracker</h4>
+                <p>Locate your bus by using HRM Transit API</p>
+                <a
+                  href="./images/portfolio/RealtimeBus-a3acada4.png"
+                  data-gallery="portfolioGallery"
+                  class="portfolio-lightbox preview-link"
+                  title="Real-time Bus Tracker"
+                  ><ion-icon name="add-outline"></ion-icon
+                ></a>
+                <a href="https://github.com/yumikawai-sys/realtimebus" class="details-link" title="More Details"
+                  ><ion-icon name="link-outline"></ion-icon
+                ></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-back">
+              <div class="portfolio-img">
+                <img
+                  src="./images/portfolio/Waterquality-0697dd47.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="portfolio-info">
+                <h4>Water Quality App</h4>
+                <p>Find the most recent water quality data</p>
+                <a
+                  href="./images/portfolio/Waterquality-0697dd47.png"
+                  data-gallery="portfolioGallery"
+                  class="portfolio-lightbox preview-link"
+                  title="Water Quality App"
+                  ><ion-icon name="add-outline"></ion-icon
+                ></a>
+                <a href="https://github.com/yumikawai-sys/waterquality" class="details-link" title="More Details"
+                  ><ion-icon name="link-outline"></ion-icon
+                ></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-back">
+              <div class="portfolio-img">
+                <img
+                  src="./images/portfolio/EmployeeManagement-5aea31f6.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="portfolio-info">
+                <h4>Employee Management System</h4>
+                <p>Explore user-friendly System using SQLite</p>
+                <a
+                  href="./images/portfolio/EmployeeManagement-5aea31f6.png"
+                  data-gallery="portfolioGallery"
+                  class="portfolio-lightbox preview-link"
+                  title="Employee Management System"
+                  ><ion-icon name="add-outline"></ion-icon
+                ></a>
+                <a href="https://github.com/yumikawai-sys/employeemanagement" class="details-link" title="More Details"
+                  ><ion-icon name="link-outline"></ion-icon
+                ></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-ai">
+              <div class="portfolio-img">
+                <img
+                  src="./images/portfolio/correlation.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="portfolio-info">
+                <h4>Data Visualization</h4>
+                <p>Find correlation of each variable</p>
+                <a
+                  href="./images/portfolio/correlation.png"
+                  data-gallery="portfolioGallery"
+                  class="portfolio-lightbox preview-link"
+                  title="Data Visualization"
+                  ><ion-icon name="add-outline"></ion-icon
+                ></a>
+                <a href="https://github.com/NSCC-ITC-Winter2024-DBAS5125-700-MCr/exercise-1-yumikawai-sys/tree/main" class="details-link" title="More Details"
+                  ><ion-icon name="link-outline"></ion-icon
+                ></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-ai">
+              <div class="portfolio-img">
+                <img
+                  src="./images/portfolio/traffic-551682de.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="portfolio-info">
+                <h4>Machine Learning Model</h4>
+                <p>Find how autonomous car identifies traffic signs</p>
+                <a
+                  href="./images/portfolio/traffic-551682de.png"
+                  data-gallery="portfolioGallery"
+                  class="portfolio-lightbox preview-link"
+                  title="Machine Learning Model"
+                  ><ion-icon name="add-outline"></ion-icon
+                ></a>
+                <a href="https://github.com/yumikawai-sys/trafficsigns" class="details-link" title="More Details"
+                  ><ion-icon name="link-outline"></ion-icon
+                ></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-back">
+              <div class="portfolio-img">
+                <img
+                  src="./images/portfolio/moneytracking.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="portfolio-info">
+                <h4>Money Tracking App</h4>
+                <p>Track the monetary flow to see the balance</p>
+                <a
+                  href="./images/portfolio/moneytracking.png"
+                  data-gallery="portfolioGallery"
+                  class="portfolio-lightbox preview-link"
+                  title="Money Tracking App"
+                  ><ion-icon name="add-outline"></ion-icon
+                ></a>
+                <a href="https://github.com/yumikawai-sys/money-traking" class="details-link" title="More Details"
+                  ><ion-icon name="link-outline"></ion-icon
+                ></a>
+              </div>
+            </div>
+
+            <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-ceremony">
+              <div class="portfolio-img">
+                <img
+                  src="./images/portfolio/portfolio-8.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="portfolio-info">
+                <h4>Ceremony 3</h4>
+                <p>Ceremony</p>
+                <a
+                  href="./images/portfolio/portfolio-8.jpg"
+                  data-gallery="portfolioGallery"
+                  class="portfolio-lightbox preview-link"
+                  title="Ceremony 3"
+                  ><ion-icon name="add-outline"></ion-icon
+                ></a>
+                <a href="#" class="details-link" title="More Details"
+                  ><ion-icon name="link-outline"></ion-icon
+                ></a>
+              </div>
+            </div> -->
+
+            <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-honeymoon">
+              <div class="portfolio-img">
+                <img
+                  src="./images/portfolio/portfolio-9.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div class="portfolio-info">
+                <h4>Honeymoon 3</h4>
+                <p>Honeymoon</p>
+                <a
+                  href="./images/portfolio/portfolio-9.jpg"
+                  data-gallery="portfolioGallery"
+                  class="portfolio-lightbox preview-link"
+                  title="Honeymoon 3"
+                  ><ion-icon name="add-outline"></ion-icon
+                ></a>
+                <a href="#" class="details-link" title="More Details"
+                  ><ion-icon name="link-outline"></ion-icon
+                ></a>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="row">
+            <h1>Contact </h1>
+          </div>
+          <div>
+            <iframe
+              style="border: 0; width: 100%; height: 270px"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.0376726296054!2d-63.58765298495839!3d44.63714699626663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b5a223ae5568ea1%3A0xb9e828df4aa13742!2s1234%20Robie%20St%2C%20Halifax%2C%20NS%20B3H%203C9!5e0!3m2!1sja!2sca!4v1664161360776!5m2!1sja!2sca" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="address">
+                  <ion-icon name="location-outline"></ion-icon>
+                  <h4>Location:</h4>
+                  <p>Halifax, NS, Canada</p>
+                </div>
+
+                <div class="email">
+                  <ion-icon name="mail-outline"></ion-icon>
+                  <h4>Email:</h4>
+                  <p>yychabata@gmail.com</p>
+                </div>
+
+                <div class="phone">
+                  <ion-icon name="call-outline"></ion-icon>
+                  <h4>Call:</h4>
+                  <p>+1 902-478-9827</p>
+                </div>
+
+                <div class="phone">
+                  <ion-icon name="logo-github"></ion-icon>
+                  <!-- <a rel="githubpage" href="https://github.com/hgihliugi"><ion-icon name="logo-github" size=large></ion-icon></a> -->
+                  <h4>GitHub:</h4>
+                  <p>https://github.com/yumikawai-sys</p>
+                </div>
+
+                <div class="phone">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                  <!-- <a rel="githubpage" href="https://github.com/hgihliugi"><ion-icon name="logo-github" size=large></ion-icon></a> -->
+                  <h4>LinkedIn:</h4>
+                  <p>https://www.linkedin.com/in/naomi-kawai-8228a077/</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-8 mt-5 mt-lg-0">
+              <form id="contact-form">
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input
+                      type="text"
+                      name="from_name"
+                      class="form-control"
+                      id="name"
+                      placeholder="First Name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="from_last"
+                      id="email"
+                      placeholder="Last Name"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="from_email"
+                    id="subject"
+                    placeholder="xxx@email.com"
+                    required
+                  />
+                </div>
+                <div class="form-group mt-3">
+                  <textarea
+                    class="form-control"
+                    name="message"
+                    rows="12"
+                    placeholder="Message"
+                    required
+                  ></textarea>
+                </div>
+                <div class="text-center">
+                  <button type="submit">Send Message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Main End -->
+    <!-- javaScript Vendors -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+
+    <!-- Customised javaScript -->
+    <script src="./js/isotope.js"></script>
+    <script src="./js/glightbox.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
